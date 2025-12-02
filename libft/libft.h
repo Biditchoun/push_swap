@@ -6,7 +6,7 @@
 /*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 11:14:26 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:24:14 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		str_len(const char *s);
 void	*mem_set(void *s, int c, size_t n);
 void	*mem_cpy(void *dest, const void *src, size_t n);
 void	*mem_move(void *dest, const void *src, size_t n);
+int		str_cpy(char *dest, char *src);
 int		strl_cpy(char *dst, const char *src, size_t size);
 int		str_chr(const char *s, int c);
 int		strn_cmp(const char *s1, const char *s2, size_t n);
@@ -38,6 +39,7 @@ int		putunbr_base(unsigned long nbr, char *base, int fd);
 
 int		rtint_free(int rt, void *p);
 void	*rtptr_free(void *rt, void *p);
+int		rtint_ffree(int rt, void **p);
 void	*rtptr_ffree(void *rt, void **p);
 
 int		ft_printf(const char *s, ...);
