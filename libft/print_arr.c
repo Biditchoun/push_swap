@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   print_arr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 17:26:52 by sawijnbe         ###   ########.fr       */
+/*   Created: 2025/12/02 17:55:22 by sawijnbe          #+#    #+#             */
+/*   Updated: 2025/12/02 17:57:17 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
+void	print_arr(int *arr, int arrsize)
+{
+	int	i;
 
-int	main(int ac, char **av);
-
-int	check_argssize(int ac, char **av);
-int	*convert_to_arr(char **av, int argssize);
-
-#endif
+	i = -1;
+	while (++i < arrsize)
+		ft_printf("%i ", arr[i]);
+	write(1, "\n", 1);
+}

@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   write_rtptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 17:26:52 by sawijnbe         ###   ########.fr       */
+/*   Created: 2025/12/02 12:05:14 by sawijnbe          #+#    #+#             */
+/*   Updated: 2025/12/02 15:57:20 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-int	main(int ac, char **av);
-
-int	check_argssize(int ac, char **av);
-int	*convert_to_arr(char **av, int argssize);
-
-#endif
+void	*write_rtptr(char *s, void *rt, int fd)
+{
+	write(fd, s, str_len(s));
+	return (rt);
+}

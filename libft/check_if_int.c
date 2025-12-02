@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_chr.c                                          :+:      :+:    :+:   */
+/*   check_if_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 15:00:50 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 18:56:48 by sawijnbe         ###   ########.fr       */
+/*   Created: 2025/12/02 18:43:57 by sawijnbe          #+#    #+#             */
+/*   Updated: 2025/12/02 19:36:03 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	str_chr(const char *s, int c)
+int	check_if_int(char *s)
 {
-	int	i;
+	int		i;
+	int		j;
 
-	if (!s)
+	i = 0;
+	if (s[i] == '-')
+		i++;
+	while (s[i] == '0')
+		i++;
+	j = 0;
+	while (s[i + j] && str_chr("0123456789", s[i + j]) > -1)
+		if (j++ > 10)
+			return (-1);
+	if (a_toi(s) != a_tol(s))
 		return (-1);
-	i = -1;
-	while (s[++i])
-		if (s[i] == (unsigned char)c)
-			return (i);
-	if (!c)
-		return (i);
-	return (-1);
+	return (0);
 }

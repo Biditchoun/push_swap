@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   int_chr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 17:26:52 by sawijnbe         ###   ########.fr       */
+/*   Created: 2025/12/02 17:20:30 by sawijnbe          #+#    #+#             */
+/*   Updated: 2025/12/02 19:12:07 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+int	int_chr(const int *arr, int n, int arrsize)
+{
+	int	i;
 
-# include "libft/libft.h"
-
-int	main(int ac, char **av);
-
-int	check_argssize(int ac, char **av);
-int	*convert_to_arr(char **av, int argssize);
-
-#endif
+	if (!arr)
+		return (-1);
+	i = -1;
+	while (++i < arrsize)
+		if (arr[i] == n)
+			return (i);
+	return (-1);
+}

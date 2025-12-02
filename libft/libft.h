@@ -6,7 +6,7 @@
 /*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 11:24:14 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/02 19:09:29 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 int		str_len(const char *s);
 void	*mem_set(void *s, int c, size_t n);
@@ -30,7 +31,12 @@ int		strn_str(const char *big, const char *little, size_t len);
 char	*str_dup(const char *s);
 char	**split(char *s, char c);
 
+int		int_chr(const int *arr, int n, int arrsize);
+int		check_if_int(char *s);
+void	print_arr(int *arr, int arrsize);
+
 int		a_toi(const char *nptr);
+long	a_tol(const char *nptr);
 char	*i_toa(int n);
 int		min(int i, int j);
 int		max(int i, int j);
@@ -41,6 +47,8 @@ int		rtint_free(int rt, void *p);
 void	*rtptr_free(void *rt, void *p);
 int		rtint_ffree(int rt, void **p);
 void	*rtptr_ffree(void *rt, void **p);
+int		write_rtint(char *s, int rt, int fd);
+void	*write_rtptr(char *s, void *rt, int fd);
 
 int		ft_printf(const char *s, ...);
 int		print_char(va_list args);
