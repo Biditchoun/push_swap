@@ -4,7 +4,7 @@ LIBFT_DIR = libft
 
 LIBFT_PATH = ${LIBFT_DIR}/
 
-SOURCES = main.c handle_input.c
+SOURCES = main.c handle_input.c ps_instructs.c r_instructs.c rr_instructs.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -21,7 +21,7 @@ $(NAME): $(OBJECTS)
 	${COMPILER} ${FLAGS} ${OBJECTS} ${LIBFT_PATH}${LIBFT} -o ${NAME}
 
 $(OBJECTS): %.o:%.c push_swap.h
-	$(COMPILER) $(FLAGS) -c $< -o $@ -I ${LIBFT_PATH}
+	$(COMPILER) $(FLAGS) -g -c $< -o $@ -I ${LIBFT_PATH}
 
 clean: 
 	make clean -C ${LIBFT_DIR}

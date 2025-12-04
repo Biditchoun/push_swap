@@ -6,7 +6,7 @@
 /*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 19:09:29 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/02 19:44:09 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <stdio.h>
 
 int		str_len(const char *s);
 void	*mem_set(void *s, int c, size_t n);

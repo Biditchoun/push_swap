@@ -6,13 +6,13 @@
 /*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 10:30:41 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 11:23:25 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/02 19:42:51 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*rtint_ffree(int rt, void **p)
+int	rtint_ffree(int rt, void **p)
 {
 	int	i;
 
