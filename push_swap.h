@@ -6,7 +6,7 @@
 /*   By: sawijnbe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 18:19:11 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/03 21:02:28 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:00:11 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_stack
 int	main(int ac, char **av);
 int	check_argssize(int ac, char **av);
 int	*convert_to_arr(char **av, int argssize);
+int	check_if_sorted(t_stack *a);
+int	bubble_sort(t_stack *a);
+int	sort_this_shit(t_stack *a, t_stack *b, t_stack *index);
 
 int	sa(t_stack *a, int fd);
 int	sb(t_stack *b, int fd);

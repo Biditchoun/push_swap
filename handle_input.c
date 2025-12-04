@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_input.c                                      :+:      :+:    :+:   */
+/*   handle_input.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:15:14 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/02 19:12:47 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:59:40 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	check_argssize(int ac, char **av)
 		{
 			while (av[ac][i] && av[ac][i] == ' ')
 				i++;
-			if (av[ac][i] && str_chr("-0123456789", av[ac][i]) == -1)
+			if (av[ac][i] && str_chr("+-0123456789", av[ac][i]) == -1)
 				return (0);
-			if (av[ac][i] == '-')
+			if (av[ac][i] == '-' || av[ac][i] == '+')
 				i++;
 			if (av[ac][i] && str_chr("0123456789", av[ac][i++]) > -1)
 				rt++;
@@ -92,4 +92,15 @@ int	*convert_to_arr(char **av, int argssize)
 	if (check_duplicates(rt, argssize))
 		return (rtptr_free(NULL, rt));
 	return (rt);
+}
+
+int	check_if_sorted(t_stack *a)
+{
+	int	i;
+
+	i = -1;
+	while (++i + 1 < a->size)
+		if (a->stack[i] > a->stack[i + 1])
+			return (0);
+	return (1);
 }

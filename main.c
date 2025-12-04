@@ -6,7 +6,7 @@
 /*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:47:52 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/04 14:48:27 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:51:40 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,21 @@ int	sort_five(t_stack *a, t_stack *b)
 
 int	do_the_magic(t_stack *a, t_stack *b)
 {
+	t_stack	a_cpy;
+
 	if (a->size < 4)
 		return (sort_three(a));
 	if (a->size == 4)
 		return (sort_four(a, b));
 	if (a->size == 5)
 		return (sort_five(a, b));
+	a_cpy.stack = arr_dup(a->stack, a->size);
+	if (!a_cpy.stack)
+		return (-1);
+	a_cpy.size = a->size;
+	bubble_sort(&a_cpy);
+	sort_this_shit(a, b, &a_cpy);
+	free(a_cpy.stack);
 	return (0);
 }
 
@@ -109,14 +118,13 @@ int	main(int ac, char **av)
 	args.stack = convert_to_arr(av, args.size);
 	if (!args.stack)
 		return (write_rtint("Error\n", 1, 2));
+	if (check_if_sorted(&args))
+		return (0);
 	b.stack = malloc(sizeof(int) * args.size);
 	if (!b.stack)
 		return (rtint_free(-1, args.stack));
 	b.size = 0;
 	rt = do_the_magic(&args, &b);
-	ft_printf("size a:%i b:%i\n", args.size, b.size);
-	print_arr(args.stack, args.size);
-	print_arr(b.stack, b.size);
 	free(args.stack);
 	free(b.stack);
 	return (rt);

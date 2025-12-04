@@ -1,24 +1,25 @@
-LIBFT = libft.a
+LIBFT =		libft.a
 
-LIBFT_DIR = libft
+LIBFT_DIR =	libft
 
 LIBFT_PATH = ${LIBFT_DIR}/
 
-SOURCES = main.c handle_input.c ps_instructs.c r_instructs.c rr_instructs.c
+SOURCES =	main.c handle_input.c bubble_sort.c algorithm.c\
+			ps_instructs.c r_instructs.c rr_instructs.c
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS =	$(SOURCES:.c=.o)
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS =		-Wall -Werror -Wextra
 
-COMPILER = cc
+COMPILER =	cc
 
-NAME = push_swap
+NAME =		push_swap
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	make -C ${LIBFT_DIR}
-	${COMPILER} ${FLAGS} ${OBJECTS} ${LIBFT_PATH}${LIBFT} -o ${NAME}
+	${COMPILER} -g ${FLAGS} ${OBJECTS} ${LIBFT_PATH}${LIBFT} -o ${NAME}
 
 $(OBJECTS): %.o:%.c push_swap.h
 	$(COMPILER) $(FLAGS) -g -c $< -o $@ -I ${LIBFT_PATH}
