@@ -6,7 +6,7 @@
 /*   By: sawijnbe <sawijnbe@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 11:47:52 by sawijnbe          #+#    #+#             */
-/*   Updated: 2025/12/04 17:51:40 by sawijnbe         ###   ########.fr       */
+/*   Updated: 2025/12/04 19:37:40 by sawijnbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int	main(int ac, char **av)
 	if (!args.stack)
 		return (write_rtint("Error\n", 1, 2));
 	if (check_if_sorted(&args))
-		return (0);
+		return (rtint_free(0, args.stack));
 	b.stack = malloc(sizeof(int) * args.size);
 	if (!b.stack)
 		return (rtint_free(-1, args.stack));
